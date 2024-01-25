@@ -21,16 +21,16 @@ export const pureAddUser = (
     }
 };
 
-
 export const pureOnBlur = (
     name: string,
     setError: React.Dispatch<React.SetStateAction<string>>
 ) => {
     if (name === '') {
         setError('Ошибка! Введите имя!');
+    }else{
+        setError('')
     }
 };
-
 
 export const pureOnEnter = (
     e: React.KeyboardEvent<HTMLInputElement>,
@@ -40,7 +40,6 @@ export const pureOnEnter = (
         addUser();
     }
 };
-
 
 // более простой и понятный для новичков
 // function GreetingContainer(props: GreetingPropsType) {

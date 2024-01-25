@@ -7,11 +7,12 @@ import GreetingContainer from './GreetingContainer';
 export type UserType = {
     _id: string;
     name: string;
-};
+}
 
 export const pureAddUserCallback = (
     name: string,
-    setUsers: React.Dispatch<React.SetStateAction<UserType[]>>,
+    // setUsers: React.Dispatch<React.SetStateAction<UserType[]>>,
+    setUsers: (users:UserType[])=> void,
     users: UserType[]
 ) => {
     const newUser: UserType = { _id: uuidv1(), name };
