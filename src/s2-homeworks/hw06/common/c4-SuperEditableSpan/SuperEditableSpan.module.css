@@ -1,11 +1,43 @@
+/* Общие стили */
 .spanBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 4px;
+    width: 300px;
 }
-
 .span {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    text-decoration: underline;
+
+}
+.input {
+    padding: 8px;
+    color: black;
+    border: 1px solid #666666;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
 }
 
-.input {
+.input:focus {
+    border-color: blue;
 }
 
 .pen {
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pen:hover {
+    background-color: #555;
 }
