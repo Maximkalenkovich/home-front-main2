@@ -1,6 +1,5 @@
 /* Общие стили */
 .spanBlock {
-    display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #f2f2f2;
@@ -13,7 +12,6 @@
     color: #333;
     font-weight: bold;
     text-decoration: underline;
-
 }
 .input {
     padding: 8px;
@@ -38,6 +36,3 @@
     transition: background-color 0.3s ease;
 }
 
-.pen:hover {
-    background-color: #555;
-}
