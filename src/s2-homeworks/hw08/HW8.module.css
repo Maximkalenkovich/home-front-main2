@@ -1,23 +1,40 @@
 .item {
+    background-color: lavender;
+    border: 1px solid lightgray;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 .item:last-of-type {
+    background-color: coral;
+    color: white;
 }
 
 .users {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .buttonsContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .thead {
+    font-weight: bold;
 }
 
 .nameCol {
+    width: 200px;
 }
 
 .ageCol {
+    width: 100px;
 }
