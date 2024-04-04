@@ -44,7 +44,7 @@ setShow(false)
         day: '2-digit',
         month: '2-digit',
         year: 'numeric',
-    });
+    }).replace(/\//g, '.');
 
     const stringDay = date.toLocaleString('en-US', { weekday: 'long' });
     const stringMonth = date.toLocaleString('en-US', { month: 'long' });
