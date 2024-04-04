@@ -13,6 +13,9 @@ function Clock() {
         // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
         // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
 
+        setInterval(()=>{
+            setDate(date)
+        },1000)
     }
 
     const stop = () => {
@@ -21,19 +24,26 @@ function Clock() {
     }
 
     const onMouseEnter = () => { // пишут студенты // показать дату если наведена мышка
-
+setShow(true)
     }
     const onMouseLeave = () => { // пишут студенты // спрятать дату если мышка не наведена
-
+setShow(false)
     }
+    const stringTime = date.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+    });
 
-    const stringTime = 'date->time' || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = 'date->date' || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    const stringDate = date.toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+    });
 
-    // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
-    const stringDay = 'date->day' || <br/> // пишут студенты
-    const stringMonth = 'date->month' || <br/> // пишут студенты
-
+    const stringDay = date.toLocaleString('en-US', { weekday: 'long' });
+    const stringMonth = date.toLocaleString('en-US', { month: 'long' });
     return (
         <div className={s.clock}>
             <div
@@ -66,7 +76,7 @@ function Clock() {
             <div className={s.buttonsContainer}>
                 <SuperButton
                     id={'hw9-button-start'}
-                    disabled={true} // пишут студенты // задизэйблить если таймер запущен
+                    disabled={false} // пишут студенты // задизэйблить если таймер запущен
                     onClick={start}
                 >
                     start
