@@ -12,15 +12,16 @@ function Clock() {
     const start = () => {
         // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
         // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
-
-        setInterval(()=>{
-            setDate(date)
+stop()
+       const id= +setInterval(()=>{
+            setDate(new Date())
         },1000)
+        setTimerId(id)
     }
 
     const stop = () => {
         // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
-
+        clearInterval(timerId)
     }
 
     const onMouseEnter = () => { // пишут студенты // показать дату если наведена мышка
@@ -83,7 +84,7 @@ setShow(false)
                 </SuperButton>
                 <SuperButton
                     id={'hw9-button-stop'}
-                    disabled={true} // пишут студенты // задизэйблить если таймер не запущен
+                    disabled={false} // пишут студенты // задизэйблить если таймер не запущен
                     onClick={stop}
                 >
                     stop
