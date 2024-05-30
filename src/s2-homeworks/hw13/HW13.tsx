@@ -46,7 +46,7 @@ const HW13 = () => {
                     setCode('Error');
                     setImage(errorUnknown)
                     setText('Ошибка при отправке запроса');
-                    setInfo('ewfwefwefwew')
+                    setInfo("Error")
                     setIsLoading(false);
                 }
                 else if (e.response.status === 400) {
