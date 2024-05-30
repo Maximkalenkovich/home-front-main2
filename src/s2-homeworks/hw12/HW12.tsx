@@ -30,7 +30,8 @@ dispatch(changeThemeId(id))
     }
 
     useEffect(() => {
-        document.documentElement.setAttribute('data-theme', themeId + '');
+        // document.documentElement.setAttribute('data-theme', themeId + '');
+        document.documentElement.dataset.theme = themeId + ''
     }, [themeId])
 
     return (
