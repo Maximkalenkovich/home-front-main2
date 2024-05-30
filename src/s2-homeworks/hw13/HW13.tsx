@@ -34,7 +34,6 @@ const HW13 = () => {
             url = 'https://samurai.it-incubator.io/api/3.0/homework/test';
         }
 
-
         axios
             .post(url, {success: x})
             .then((res) => {
@@ -47,14 +46,13 @@ const HW13 = () => {
 
             })
             .catch((e) => {
-                if (e.response.data.yourBody.success === undefined) {
+                if (e.response.status === 400) {
                     setCode('Код 400!');
                     setImage(error400);
                     setText(e.response.data.errorText);
                     setInfo(e.response.data.info)
                     setIsLoading(false);
                 }
-
                 else {
                     setCode('Код 500!')
                     setImage(error500)
