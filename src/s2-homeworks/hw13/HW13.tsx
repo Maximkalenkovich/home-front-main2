@@ -25,11 +25,6 @@ const HW13 = () => {
         let url;
         if (x === null) {
             url = 'https://xxxxxx.ccc';
-            setCode('Error')
-            setImage(errorUnknown)
-            setText('network error')
-            setInfo('axios error')
-            setIsLoading(false);
         } else {
             url = 'https://samurai.it-incubator.io/api/3.0/homework/test';
         }
@@ -46,14 +41,22 @@ const HW13 = () => {
 
             })
             .catch((e) => {
-                if (e.response.status === 400) {
+                if (x===null){
+                    console.error(e);
+                    setCode('Error');
+                    setImage(errorUnknown)
+                    setText('Ошибка при отправке запроса');
+                    setInfo('ewfwefwefwew')
+                    setIsLoading(false);
+                }
+                else if (e.response.status === 400) {
                     setCode('Код 400!');
                     setImage(error400);
                     setText(e.response.data.errorText);
                     setInfo(e.response.data.info)
                     setIsLoading(false);
                 }
-                else {
+                else if (e.response.status === 500) {
                     setCode('Код 500!')
                     setImage(error500)
                     setText(e.response.data.errorText)
