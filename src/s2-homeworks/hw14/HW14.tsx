@@ -19,8 +19,10 @@ const getTechs = (find: string) => {
             'https://samurai.it-incubator.io/api/3.0/homework/test2',
             {params: {find}}
         )
+        .then((response) => response.data.techs)
         .catch((e) => {
             alert(e.response?.data?.errorText || e.message)
+            return []
         })
 }
 
@@ -31,26 +33,23 @@ const HW14 = () => {
     const [techs, setTechs] = useState<string[]>([])
 
     const sendQuery = (value: string) => {
-        setLoading(true)
+        setLoading(true);
         getTechs(value)
-            .then((res) => {
-                // делает студент
-
-                // сохранить пришедшие данные
-
-                //
+            .then((data) => {
+                setTechs(data);
+                setLoading(false);
             })
-    }
+            .catch((error) => {
+                // handle error
+                setLoading(false);
+            });
+    };
+
 
     const onChangeText = (value: string) => {
-        setFind(value)
-        // делает студент
-
-        // добавить/заменить значение в квери урла
-        // setSearchParams(
-
-        //
-    }
+        setFind(value);
+        setSearchParams({ find: value });
+    };
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
