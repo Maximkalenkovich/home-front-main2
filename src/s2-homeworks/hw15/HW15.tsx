@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useCallback, useEffect, useState} from 'react'
 import s2 from '../../s1-main/App.module.css'
 import s from './HW15.module.css'
 import axios from 'axios'
@@ -32,9 +32,10 @@ const getTechs = (params: ParamsType) => {
         .get<{ techs: TechType[], totalCount: number }>(
             'https://samurai.it-incubator.io/api/3.0/homework/test3',
             {params}
-        )
+        ).then((response) => response.data.techs)
         .catch((e) => {
             alert(e.response?.data?.errorText || e.message)
+            return []
         })
 }
 
@@ -50,38 +51,37 @@ const HW15 = () => {
     const sendQuery = (params: any) => {
         setLoading(true)
         getTechs(params)
-            .then((res) => {
-                // делает студент
-
-                // сохранить пришедшие данные
-
-                //
+            .then((data) => {
+                setLoading(false)
+              setTechs(data)
             })
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
-        // делает студент
+        setPage(newPage);
+        setCount(newCount);
 
-        // setPage(
-        // setCount(
+        const params = {
+            page: newPage.toString(),
+            count: newCount.toString(),
+        };
 
-        // sendQuery(
-        // setSearchParams(
-
-        //
-    }
-
+        sendQuery(params);
+        setSearchParams(params);
+    };
     const onChangeSort = (newSort: string) => {
-        // делает студент
+        setSort(newSort);
+        setPage(1); // при сортировке сбрасываем на 1 страницу
 
-        // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
+        const params = {
+            page: '1',
+            count: count.toString(),
+            sort: newSort,
+        };
 
-        // sendQuery(
-        // setSearchParams(
-
-        //
-    }
+        sendQuery(params);
+        setSearchParams(params);
+    };
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)

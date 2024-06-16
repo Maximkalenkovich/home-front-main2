@@ -1,27 +1,99 @@
-.tech {
-    width: 50vw;
+#hw15 {
+    margin: 20px;
 }
 
-.developer {
-
+.hwTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.techHeader {
-    width: 50vw;
+.hw {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
 }
 
-.developerHeader {
-
-}
-
-.row {
+.loading {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-size: 18px;
+    color: #666;
 }
 
 .rowHeader {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
-.loading {
+.techHeader,
+.developerHeader {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+}
 
+.techHeader {
+    width: 50%;
+}
+
+.developerHeader {
+    width: 50%;
+    justify-content: flex-end;
+}
+
+
+.tech:last-child,
+.developer:last-child {
+    border-bottom: none;
+}
+
+.tech .techName,
+.developer .developerName {
+    font-size: 16px;
+    color: #333;
+}
+
+.tech .techDescription,
+.developer .developerDescription {
+    font-size: 14px;
+    color: #666;
+}
+.tableContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tableColumn {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rowHeader {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+
+
+.tech {
+    text-align: right;
+}
+
+.developer {
+    text-align: left;
 }

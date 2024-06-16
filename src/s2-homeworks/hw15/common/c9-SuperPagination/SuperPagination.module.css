@@ -1,11 +1,57 @@
 .pagination {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination .MuiPagination-root {
+    margin-right: 10px;
+}
+
+.pagination .MuiPagination-ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pagination .MuiPagination-ul li {
+    margin: 0 5px;
+}
+
+.pagination .MuiPagination-ul li button {
+    background-color: #f1f1f1;
+    border: none;
+    color: #333;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 4px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.pagination .MuiPagination-ul li button.Mui-selected {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.pagination .MuiPagination-ul li button:hover:not(.Mui-selected) {
+    background-color: #ddd;
 }
 
 .text1 {
-
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
 }
 
 .text2 {
-
+    font-size: 16px;
+    color: #666;
 }
