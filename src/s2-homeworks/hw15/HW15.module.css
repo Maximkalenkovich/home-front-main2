@@ -1,17 +1,57 @@
-#hw15 {
-    margin: 20px;
+.tech {
+    width: calc(50% - 10px);
+    color: #000;
+    font-size: 16px;
+    line-height: 24px;
 }
 
-.hwTitle {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
+.developer {
+    width: calc(50% - 10px);
+    color: #000;
+    font-size: 16px;
+    line-height: 24px;
 }
 
-.hw {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 20px;
+.techHeader {
+    width: calc(50% - 10px);
+    display: flex;
+    align-items: center;
+}
+
+.developerHeader {
+    width: calc(50% - 10px);
+    display: flex;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    padding: 12px 17px;
+}
+
+.row:not(:last-child){
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.rowHeader {
+    display: flex;
+    background-color: #E5E5E5;
+    padding: 10px 17px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.rowHeader span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+
+.contentOpacity{
+    opacity: 0.2;
 }
 
 .loading {
@@ -23,77 +63,3 @@
     color: #666;
 }
 
-.rowHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.techHeader,
-.developerHeader {
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.techHeader {
-    width: 50%;
-}
-
-.developerHeader {
-    width: 50%;
-    justify-content: flex-end;
-}
-
-
-.tech:last-child,
-.developer:last-child {
-    border-bottom: none;
-}
-
-.tech .techName,
-.developer .developerName {
-    font-size: 16px;
-    color: #333;
-}
-
-.tech .techDescription,
-.developer .developerDescription {
-    font-size: 14px;
-    color: #666;
-}
-.tableContainer {
-    display: flex;
-    justify-content: space-between;
-}
-
-.tableColumn {
-    width: 48%;
-    display: flex;
-    flex-direction: column;
-}
-
-.rowHeader {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    padding: 5px 0;
-}
-
-.row {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 0;
-}
-
-
-
-.tech {
-    text-align: right;
-}
-
-.developer {
-    text-align: left;
-}
